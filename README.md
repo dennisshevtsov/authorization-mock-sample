@@ -1,0 +1,1 @@
+# authorization-mock-sample
