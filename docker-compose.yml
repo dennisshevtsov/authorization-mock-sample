@@ -1,0 +1,13 @@
+version: '3.4'
+
+services:
+  authorization-mock-sample-api:
+    container_name: authorization-mock-sample-api
+    image: authorization-mock-sample-api
+    build:
+      context: .
+      dockerfile: src/AuthorizationMockSample/Dockerfile
+    environment:
+      - ASPNETCORE_HTTP_PORTS=5001
+    ports:
+      - "5001:5001"
