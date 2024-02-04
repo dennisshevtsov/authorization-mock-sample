@@ -1,0 +1,13 @@
+[
+  {
+    "httpRequest": {
+      "path": "/connect/introspect"
+    },
+    "httpResponse": {
+      "body": {
+          "active": true,
+          "sub": "test"
+      }
+    }
+  }
+]
