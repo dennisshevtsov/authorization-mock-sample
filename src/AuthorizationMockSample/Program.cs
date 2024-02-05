@@ -1,6 +1,10 @@
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 builder.Services.AddAuthentication()
-                .AddBearerToken();
+                .AddJwtBearer(options =>
+                {
+                  options.Authority = "http://localhost:5001";
+                  options.RequireHttpsMetadata = false;
+                });
 builder.Services.AddAuthorization();
 
 WebApplication app = builder.Build();
