@@ -4,10 +4,9 @@
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 builder.Services.AddAuthentication()
-                .AddJwtBearer(options =>
+                .AddOAuth2Introspection(options =>
                 {
-                  options.Authority = "http://localhost:5001";
-                  options.RequireHttpsMetadata = false;
+                  options.IntrospectionEndpoint = "http://host.docker.internal:5002/connect/introspect";
                 });
 builder.Services.AddAuthorization();
 
