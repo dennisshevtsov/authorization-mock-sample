@@ -9,5 +9,16 @@
           "sub": "test"
       }
     }
+  },
+  {
+    "httpRequest": {
+      "path": "/connect/userinfo"
+    },
+    "httpResponse": {
+      "body": {
+        "sub": "test",
+        "name": "Test Test"
+      }
+    }
   }
 ]
