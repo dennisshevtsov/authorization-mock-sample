@@ -22,4 +22,22 @@ public class AuthorizationTest
     // Assert
     Assert.AreEqual(HttpStatusCode.Unauthorized, response.StatusCode);
   }
+
+  [TestMethod]
+  public async Task GetAsync_BearerToken_200Returned()
+  {
+    // Arrange
+    using HttpClient client = new();
+    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue
+    (
+      scheme   : "Bearer",
+      parameter: "test"
+    );
+
+    // Act
+    using HttpResponseMessage response = await client.GetAsync("http://localhost:5001");
+
+    // Assert
+    Assert.AreEqual(HttpStatusCode.OK, response.StatusCode);
+  }
 }
