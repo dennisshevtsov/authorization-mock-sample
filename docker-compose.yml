@@ -11,8 +11,8 @@ services:
       - ASPNETCORE_HTTP_PORTS=5001
     ports:
       - "5001:5001"
-  oidc-server:
-    container_name: mockserver
+  authorization-mock-sample-oidc:
+    container_name: authorization-mock-sample-oidc
     image: mockserver/mockserver:mockserver-5.15.0
     ports:
       - 5002:5002
